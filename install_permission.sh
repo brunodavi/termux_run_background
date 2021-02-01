@@ -1,6 +1,9 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-mkdir ~/.termux/
-echo -e "\nallow-external-apps=true\n\n" >> ~/.termux/termux-properties
+if [ ! -d ~/.termux ]; then
+  mkdir ~/.termux/
+fi
+
+echo -e "\nallow-external-apps=true\n\n" >> ~/.termux/termux.properties
 termux-reload-settings
 exit
